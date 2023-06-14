@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F3F8F5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        >
+        <ImageView
+            android:id="@+id/leftArrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_leftarrow" />
+        <TextView
+            android:text="Bình luận"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linear"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/avatar4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/avatar2"
+                app:civ_border_color="#424343"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                app:layout_constraintLeft_toLeftOf="@id/image" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_inputname_detailpost"
+                android:padding="5dp"
+                android:text="nguyen thi linh"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/profile"
+                app:layout_constraintLeft_toRightOf="@id/profile"
+                app:layout_constraintTop_toTopOf="@id/profile" />
+
+            <TextView
+                android:id="@+id/contentPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="content post"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/contentPost" />
+
+            <TextView
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_gray_like"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/comment"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icon_comment"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="13"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/like"
+                app:layout_constraintTop_toTopOf="@id/like" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/like" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rviewComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/contentComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_input_comment_post"
+            android:padding="5dp"
+            android:layout_weight="9"
+            android:hint="Viết bình luận..."
+            android:inputType="textMultiLine"
+            android:maxLines="2"
+            android:minHeight="48dp"
+            android:textSize="15dp" />
+    <ImageView
+        android:id="@+id/btnsend"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_send"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        />
+    </LinearLayout>
+</RelativeLayout>

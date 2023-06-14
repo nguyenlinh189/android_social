@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:backgroundTint="#ECDBDB"
+    android:layout_marginTop="10dp"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/openNotification"
+    android:padding="5dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/avatar2"
+        app:civ_border_color="#424343"
+        app:civ_border_width="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:text="nguyen thi linh da binh luan bai viet cua ban nguyen thi linh da binh luan bai viet cua ban"
+        app:layout_constraintBottom_toBottomOf="@id/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile"
+        app:layout_constraintTop_toTopOf="@id/profile"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bay gio"
+        app:layout_constraintBottom_toBottomOf="@+id/profile"
+        app:layout_constraintStart_toStartOf="@+id/content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

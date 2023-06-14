@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Social Demo"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="#C67312"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/mess"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_imagebutton"
+            android:src="@drawable/icon_message"
+            app:layout_constraintHorizontal_bias="0.225"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_imagebutton"
+            android:src="@drawable/icon_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mess"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/view1"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#A5A4A4"
+            app:layout_constraintTop_toBottomOf="@id/avatar"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:cardCornerRadius="12dp"
+               android:backgroundTint="#F8F5F5"
+               android:layout_marginTop="5dp"
+               android:layout_marginLeft="5dp">
+               <RelativeLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:id="@+id/story1"
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:src="@drawable/avatar2"/>
+                   <de.hdodenhof.circleimageview.CircleImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:layout_below="@id/story1"
+                       android:src="@drawable/icon_oval"
+                       android:layout_centerHorizontal="true"
+                       android:layout_marginTop="-15dp"
+                       app:civ_border_width="2dp"
+                       app:civ_border_color="@color/white"
+                       />
+                   <de.hdodenhof.circleimageview.CircleImageView
+                       android:id="@+id/addStory"
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/icon_add2"
+                       android:layout_below="@id/story1"
+                       android:layout_centerHorizontal="true"
+                       android:layout_marginTop="-15dp"
+                       app:civ_border_width="2dp"
+                       app:civ_border_color="@color/white"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Tạo tin"
+                       android:textColor="@color/black"
+                       android:textSize="12dp"
+                       android:layout_below="@id/story1"
+                       android:layout_centerHorizontal="true"
+                       android:layout_marginTop="20dp"
+                       android:layout_marginBottom="5dp"/>
+               </RelativeLayout>
+           </androidx.cardview.widget.CardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rviewstory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+         <View
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="5dp"
+             android:background="#A39D9D"
+             />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rviewPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

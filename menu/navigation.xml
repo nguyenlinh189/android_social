@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mHome"
+        android:title="Trang chủ"
+        android:icon="@drawable/mhone"
+        />
+    <item android:id="@+id/mnotification"
+    android:title="Thông báo"
+    android:icon="@drawable/icon_notification"
+    />
+    <item android:id="@+id/maddpost"
+        android:title="Đăng bài"
+        android:icon="@drawable/icon_add"
+        />
+    <item android:id="@+id/msearch"
+        android:title="Reels"
+        android:icon="@drawable/icon_video"
+        />
+    <item android:id="@+id/maccount"
+        android:title="Tài khoản"
+        android:icon="@drawable/maccount"
+        />
+</menu>
